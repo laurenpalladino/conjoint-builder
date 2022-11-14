@@ -1,0 +1,37 @@
+Qualtrics.SurveyEngine.addOnload(function(){
+    var numChoice = 5;
+    var name = [" Alexander Wagner ", " Amy Wagner ", "Kenneth Dixon", "Kimberly Dixon",
+        "Steven Pham", "Stephanie Pham", "Christopher Alvarez", "Cynthia Alvarez"];
+    var Repparty = [" Republican ", " Democrat "];
+    var ideology = [" liberal ", " moderate ", " conservative "];
+    var Obstructedparty = [" Republican ", " Democrat "];
+    var topic = [" transportation ", " national defense ", " immigration ", " early childhood education "];
+    var pronoun = [" He ", " She "];
+	var justification = [" aren’t going far enough ", " are going too far "];
+	
+function shuffle(array) {
+        for (var i = array.length - 1; i > 0; i) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+    }
+
+    function shuffle_one(theArray) {
+        var out = shuffle(theArray);
+        var out = out[0];
+        return (out);
+    };
+
+    for (i = 1; i <= numChoice; i++) {
+        Qualtrics.SurveyEngine.setEmbeddedData(" choice " + i + " _name", shuffle_one(name));
+        Qualtrics.SurveyEngine.setEmbeddedData(" choice " + i + " _Repparty", shuffle_one(Repparty));
+        Qualtrics.SurveyEngine.setEmbeddedData(" choice " + i + " _ideology", shuffle_one(ideology));
+        Qualtrics.SurveyEngine.setEmbeddedData(" choice " + i + " _Obstructedparty", shuffle_one(Obstructedpanrty));
+		Qualtrics.SurveyEngine.setEmbeddedData(" choice " + i + " _topic", shuffle_one(topic));
+		Qualtrics.SurveyEngine.setEmbeddedData(" choice " + i + " _pronoun", shuffle_one(pronoun));
+		Qualtrics.SurveyEngine.setEmbeddedData(" choice " + i + " _justification", shuffle_one(justification));
+	}
+})
