@@ -34,4 +34,4 @@ function shuffle(array) {
 		Qualtrics.SurveyEngine.setEmbeddedData(" choice " + i + " _pronoun", shuffle_one(pronoun));
 		Qualtrics.SurveyEngine.setEmbeddedData(" choice " + i + " _justification", shuffle_one(justification));
 	}
-})
+});
